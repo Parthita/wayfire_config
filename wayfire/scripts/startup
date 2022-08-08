@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# Kill already running process
+_ps=(waybar mako mpd xfce-polkit)
+for _prs in "${_ps[@]}"; do
+	if [[ `pidof ${_prs}` ]]; then
+		killall -9 ${_prs}
+	fi
+done
+
+
+bash ~/.config/wayfire/scripts/statusbar &
+
+# Apply themes
+bash ~/.config/wayfire/scripts/gtkthemes-bkp &
+
+# Lauch notification daemon (mako)
+bash ~/.config/wayfire/scripts/notifications &
+
+exec mpd 

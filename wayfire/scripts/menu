@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+
+## launch wofi with alt config
+
+CONFIG="$HOME/.config/wayfire/wofi/config"
+STYLE="$HOME/.config/wayfire/wofi/style.css"
+COLORS="$HOME/.config/wayfire/wofi/colors"
+
+if [[ ! `pidof wofi` ]]; then
+	wofi --show drun --prompt 'Search Applications' --conf ${CONFIG} --style ${STYLE} --color ${COLORS}
+else
+	pkill wofi
+fi
