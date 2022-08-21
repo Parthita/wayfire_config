@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-## Script To Manage Speaker Volume For Archcraft (in Wayland).
-
 iDIR="$HOME/.config/wayfire/mako/icons"
 
 # Get Volume
